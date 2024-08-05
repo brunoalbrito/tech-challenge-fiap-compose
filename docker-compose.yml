@@ -34,6 +34,24 @@ services:
     depends_on:
       - db
       - rabbitmq
+
+  pedido-service:
+    image: edsjunior7/tech-challenge-pedido
+    ports:
+      - 8085:80
+    environment:
+      - 'DB_HOST=db'
+      - 'DB_NAME=tech-challenge-db'
+      - 'DB_USERNAME=myuser'
+      - 'DB_PASSWORD=secret'
+      - 'RABBITMQ_HOST=rabbitmq'
+      - 'RABBITMQ_USER=user'
+      - 'RABBITMQ_PASS=password'
+    networks:
+      - tech-challenge-fiap
+    depends_on:
+      - db
+      - rabbitmq
 networks:
   tech-challenge-fiap:
     driver: bridge
