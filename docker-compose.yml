@@ -3,13 +3,13 @@ services:
     image: rabbitmq:3.13-management-alpine
     container_name: 'rabbitmq'
     ports:
-        - 5672:5672
-        - 15672
+      - 5672:5672
+      - 15672
     volumes:
-        - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
-        - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+      - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
     networks:
-        - tech-challenge-fiap
+      - tech-challenge-fiap
   db:
     image: 'postgres:latest'
     environment:
@@ -19,8 +19,9 @@ services:
     ports:
       - 5432
     networks:
-        - tech-challenge-fiap
-  backend:
+      - tech-challenge-fiap
+
+  pagamento-service:
     image: brunoalbubrito/tech-challenge-pagamento
     environment:
       - 'DB_HOST=db'
@@ -28,9 +29,9 @@ services:
       - 'DB_USERNAME=myuser'
       - 'DB_PASSWORD=secret'
     ports:
-      - 8084:8080
+      - 8083:8083
     networks:
-        - tech-challenge-fiap
+      - tech-challenge-fiap
     depends_on:
       - db
       - rabbitmq
@@ -52,6 +53,37 @@ services:
     depends_on:
       - db
       - rabbitmq
+
+  produto-service:
+    image: ufoindustry/tech-challenge-produto
+    environment:
+      MONGO_HOST: mongodb
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+      MONGO_INITDB_DATABASE: admin
+    ports:
+      - 8082:8082
+    networks:
+        - tech-challenge-fiap
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+      MONGO_INITDB_DATABASE: admin
+    volumes:
+      # - mongo-data:/data/db
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    ports:
+      - "27017:27017"
+    networks:
+      - tech-challenge-fiap
+
 networks:
   tech-challenge-fiap:
     driver: bridge
