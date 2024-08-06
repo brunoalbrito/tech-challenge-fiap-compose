@@ -10,6 +10,9 @@ services:
       - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
     networks:
       - tech-challenge-fiap
+    environment:
+      RABBITMQ_DEFAULT_USER: user
+      RABBITMQ_DEFAULT_PASS: password
   db:
     image: 'postgres:latest'
     environment:
