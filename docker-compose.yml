@@ -24,6 +24,7 @@ services:
   pagamento-service:
     image: brunoalbubrito/tech-challenge-pagamento
     environment:
+      - 'RABBITMQ_HOST=rabbitmq'
       - 'DB_HOST=db'
       - 'DB_NAME=tech-challenge-db'
       - 'DB_USERNAME=myuser'
