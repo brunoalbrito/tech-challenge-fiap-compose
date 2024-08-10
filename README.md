@@ -72,4 +72,4 @@ O projeto adota a estratégia de **Saga Coreografada** para orquestrar as transa
 **Após correção:** [Acessar link](assets/ZAP_Scanning_Report_After_Corrections1.pdf)
 
 ## Relatório de impacto dos dados pessoais (RIPD)
-[Acessar link](assets/RIPD.docx)
+[Acessar link](assets/RIPD.pdf)
