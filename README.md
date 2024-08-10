@@ -62,6 +62,6 @@ O projeto adota a estratégia de **Saga Coreografada** para orquestrar as transa
 - **Confirmação de Pagamento**: Após o usuário efetuar o pagamento através do **Mercado Pago**, o serviço de pagamento confirma a transação e envia uma mensagem para o RabbitMQ, informando o status do pagamento.
 - **Atualização do Pedido**: O serviço de pedidos consome a mensagem do RabbitMQ e atualiza o status do pedido com base nas informações recebidas.
 
-## Estratégia de Saga Coreografada
+## O que é a Estratégia de Saga Coreografada
 
 - **Coreografia da Saga**: Nesta arquitetura, cada serviço é responsável por realizar suas operações de forma independente e, em caso de falha, tomar as medidas necessárias para desfazer ou compensar as ações anteriores. A comunicação entre serviços é realizada através de eventos/mensagens, sem a necessidade de um orquestrador central, o que promove maior resiliência e escalabilidade do sistema.
