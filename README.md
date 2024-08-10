@@ -65,3 +65,11 @@ O projeto adota a estratégia de **Saga Coreografada** para orquestrar as transa
 ## O que é a Estratégia de Saga Coreografada
 
 - **Coreografia da Saga**: Nesta arquitetura, cada serviço é responsável por realizar suas operações de forma independente e, em caso de falha, tomar as medidas necessárias para desfazer ou compensar as ações anteriores. A comunicação entre serviços é realizada através de eventos/mensagens, sem a necessidade de um orquestrador central, o que promove maior resiliência e escalabilidade do sistema.
+
+## Relatórios OWASP Zap
+**Antes da correção:** [Acessar link](assets/ZAP_Scanning_Report1.pdf)
+
+**Após correção:** [Acessar link](assets/ZAP_Scanning_Report_After_Corrections1.pdf)
+
+## Relatório de impacto dos dados pessoais (RIPD)
+[Acessar link](assets/RIPD.docx)
