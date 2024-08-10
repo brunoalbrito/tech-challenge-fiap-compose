@@ -37,11 +37,9 @@ Micro serviço responsável por gerenciar o pagamento interagindo com o Mercado 
 
 ## Arquitetura
 
-O projeto adota a estratégia de Saga Coreografada para orquestrar as transações distribuídas. Nesse contexto, a confirmação do pagamento é realizada de forma assíncrona, utilizando a troca de mensagens para assegurar a comunicação eficaz entre os serviços de Pagamento e Pedido. Essa abordagem permite que cada serviço se comunique de maneira autônoma, garantindo consistência e resiliência na execução das operações.
+O projeto adota a estratégia de **Saga Coreografada** para orquestrar as transações distribuídas. Nesse contexto, a confirmação do pagamento é realizada de forma assíncrona, utilizando a troca de mensagens para assegurar a comunicação eficaz entre os serviços de Pagamento e Pedido. Essa abordagem permite que cada serviço se comunique de maneira autônoma, garantindo consistência e resiliência na execução das operações.
 
 ![saga](assets/saga.png)
-
-O diagrama mostra uma arquitetura baseada em microsserviços para um sistema de e-commerce, utilizando a estratégia de **Saga Coreografada** para gerenciar transações distribuídas entre os serviços. Ele destaca a interação entre os serviços de **Produto**, **Pedido**, **Pagamento**, e **Autenticação de Usuário**, além de demonstrar como o **RabbitMQ** é utilizado para a comunicação assíncrona entre os serviços.
 
 ## Componentes e Fluxos
 
