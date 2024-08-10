@@ -24,7 +24,13 @@ Micro serviço responsável por gerenciar os produtos de uma loja.
 
 Micro serviço responsável por criar e gerenciar os pedidos interagindo com o Pagamento API
 
-[Acessar link](https://github.com/brazalc/tech-challenge-produto)
+[Acessar link](https://github.com/edsjunior/tech-challenge-pedido)
+
+## Pagamento API
+
+Micro serviço responsável por gerenciar o pagamento interagindo com o Mercado Pago
+
+[Acessar link](https://github.com/brunoalbrito/tech-challenge-pagamento)
 
 [![build](https://github.com/brunoalbrito/tech-challenge-pagamento/actions/workflows/codecov.yaml/badge.svg)](https://github.com/brunoalbrito/tech-challenge-pagamento/actions/workflows/codecov.yaml)
 [![codecov](https://codecov.io/gh/brunoalbrito/tech-challenge-pagamento/graph/badge.svg?token=EI0P7UB4NN)](https://codecov.io/gh/brunoalbrito/tech-challenge-pagamento)
