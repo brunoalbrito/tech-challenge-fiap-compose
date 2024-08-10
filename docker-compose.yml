@@ -49,6 +49,7 @@ services:
       - 'RABBITMQ_HOST=rabbitmq'
       - 'RABBITMQ_USER=user'
       - 'RABBITMQ_PASS=password'
+      - 'PAGAMENTO_API_URL=http://pagamento-service:8083'
     networks:
       - tech-challenge-fiap
     depends_on:
